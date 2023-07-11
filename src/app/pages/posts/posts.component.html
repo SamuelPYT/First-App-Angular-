@@ -1,0 +1,19 @@
+
+<!-- componente padre, traemos la info post.component, componente hijo -->
+<ul class="list-group">
+    <!-- traer el arreglo y mostrarlo en la vista posts   -->
+     <!-- <li *ngFor="let mensaje of mensajes | async"
+        class="list-group-item">
+        <h2>{{mensaje.title}}</h2>
+        <p> {{mensaje.body}} </p>
+        
+    </li>  -->
+
+
+
+    <h1>Posts</h1>
+    <!--traer variable mensaje para mostrar en pantalla-->
+    <app-post *ngFor="let mensaje of mensajes | async"
+               [mensaje]="mensaje"
+               (clickPost)="escuchaClick ( $event )"></app-post>
+</ul>
